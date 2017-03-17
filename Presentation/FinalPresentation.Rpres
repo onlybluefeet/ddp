@@ -1,0 +1,46 @@
+Course Project: Shiny App and Reproducible Pitch
+========================================================
+author: Taryn Pratt
+date: March 17, 2017
+autosize: true
+
+Project Details
+========================================================
+
+The final project for the Coursera Developing Data Products course is to write a Shiny application and create a presentation pitch with either Slidify or RStudtio Presenter. The Shiny user interface allows users to input various parameters to visualize the data.
+
+The assignment required that the application include:
+
+- a form of input on the UI; an operation on the ui from server.R
+- a reactive output displayed as a result of server calculations
+
+My Application
+========================================================
+
+This project using the [diamonds dataset](http://docs.ggplot2.org/0.9.3.1/diamonds.html) that is part of the [ggplot2](http://docs.ggplot2.org/current/) library. This dataset consists of various parameters that determine the quality of diamonds including cut, color, and clarity. The table below provides a summary of the dataset.
+
+```{r include=FALSE, cache=FALSE}
+library(ggplot2)
+```
+
+```{r}
+summary(diamonds)
+```
+
+Caret vs. Price
+========================================================
+
+By visualizing the data, it becomes clear there is a relationship between the caret and the price of a diamond.  As the carets increase the price tends to increase as well. 
+
+```{r, echo=FALSE}
+ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()
+```
+
+Links
+========================================================
+
+The links to the Shiny application, the reproducible presentation, and the code are located below.  By changing parameters of the Shiny application, the plot of the diamond data will change. 
+
+- GitHub Repository - https://github.com/onlybluefeet/ddp
+- Shiny Application - https://bluefeet.shinyapps.io/DDPFinalProject/
+- Reproducible Presentation - http://rpubs.com/bluefeet/pitch 
